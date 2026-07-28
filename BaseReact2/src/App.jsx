@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { EyeOff } from "lucide-react";
+import { EyeOff, Eye } from "lucide-react";
 
 function App() {
   const [userName, setUserName] = useState("");
-  const [PasswordVisible, setPasswordVisible] = useState(false);
+  const [passWordVisible, setPasswordVisible] = useState(false);
 
   return (
     <div>
@@ -16,12 +16,16 @@ function App() {
         />
 
         <input
-          type={!PasswordVisible ? "text" : "password"}
+          type={passWordVisible ? "text" : "password"}
           placeholder="Digite a senha"
         />
 
-        <button>
-          <EyeOff />
+        <button
+          onClick={() => {
+            setPasswordVisible((pass) => !pass);
+          }}
+        >
+          {passWordVisible ? <Eye /> : <EyeOff />}
         </button>
       </div>
     </div>
