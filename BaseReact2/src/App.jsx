@@ -28,6 +28,7 @@ function App() {
           {passWordVisible ? <Eye /> : <EyeOff />}
         </button>
       </div>
+      <h2>Bem vindo {userName}</h2>
     </div>
   );
 }
